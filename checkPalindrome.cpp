@@ -32,35 +32,7 @@ bool checkPalindrome(char name[], int len)
     }
     return 1;
 }
-// bool checkPalindrome(char name[], int len)
-// {
-//     int start = 0;
-//     int end = len - 1;
-//     while (start <= end)
-//     {
-//         if (isalnum(name[start]) == 0)
-//         {
 
-//             start++;
-//         }
-//         else if (isalnum(name[end]) == 0)
-//         {
-
-//             end--;
-//         }
-
-//         if ((name[start]) != (name[end]))
-//         {
-//             return false;
-//         }
-//         else
-//         {
-//             start++;
-//             end--;
-//         }
-//     }
-//     return true;
-// }
 int getLenth(char name[])
 {
     int len = 0;
