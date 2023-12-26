@@ -17,29 +17,28 @@ using namespace std;
 
 string reverseWords(string S)
 {
-
-    stringstream ss(S);
-    vector<string> words;
-    string word;
-
-    while (getline(ss, word, '.'))
+    stack<string> st;
+    for (int i = 0; i < S.length(); i++)
     {
-        words.push_back(word);
+        string word;
+        while (S[i] != '.' && i < S.length())
+        {
+            word += S[i];
+            i++;
+        }
+        st.push(word);
     }
-    // for (int i = 0; i < words.size(); i++)
-    // {
-    //     cout << words[i] << " ";
-    // }
-
-    reverse(words.begin(), words.end());
-
-    string reversedString = words[0];
-    for (int i = 1; i < words.size(); ++i)
+    string ans = "";
+    while (!st.empty())
     {
-        reversedString += "." + words[i];
+        ans += st.top();
+        st.pop();
+        if (!st.empty())
+        {
+            ans += '.';
+        }
     }
-
-    return reversedString;
+    return ans;
 }
 
 int main()
@@ -51,3 +50,21 @@ int main()
 
     return 0;
 }
+// stringstream ss(S);
+// vector<string> words;
+// string word;
+
+// while (getline(ss, word, '.'))
+// {
+//     words.push_back(word);
+// }
+
+// reverse(words.begin(), words.end());
+
+// string reversedString = words[0];
+// for (int i = 1; i < words.size(); ++i)
+// {
+//     reversedString += "." + words[i];
+// }
+
+// return reversedString;
